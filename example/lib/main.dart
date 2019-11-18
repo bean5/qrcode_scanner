@@ -25,8 +25,8 @@ class _MyAppState extends State<MyApp> {
   @override
   initState() {
     super.initState();
-    this._inputController = new TextEditingController();
-    this._outputController = new TextEditingController();
+    this._inputController = TextEditingController();
+    this._outputController = TextEditingController();
   }
 
   @override
@@ -146,10 +146,10 @@ class _MyAppState extends State<MyApp> {
                               final success = await ImageGallerySaver.saveImage(this.bytes);
                               SnackBar snackBar;
                               if (success) {
-                                snackBar = new SnackBar(content: new Text('Successful Preservation!'));
+                                snackBar = SnackBar(content: Text('Successful Preservation!'));
                                 Scaffold.of(context).showSnackBar(snackBar);
                               } else {
-                                snackBar = new SnackBar(content: new Text('Save failed!'));
+                                snackBar = SnackBar(content: Text('Save failed!'));
                               }
                             },
                             child: Text(
